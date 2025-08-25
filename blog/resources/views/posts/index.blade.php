@@ -1,35 +1,8 @@
-<!doctype html>
-<html lang="en">
+@extends('layout.app')
+@section ('title') Index @endsection
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-</head>
-<body>
-    <section id="navbar">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Posts</a>
-                        </li>
+@section('content')
 
-                    </ul>
-
-                </div>
-            </div>
-        </nav>
-    </section>
     <section id="home-page">
         <div class="container mt-5">
             <div class="text-center">
@@ -53,23 +26,26 @@
                     <td>{{ $post['Posted_By'] }}</td>
                     <td>{{ $post['created_at'] }}</td>
                     <td>
-                        <button type="button" class="btn btn-info">View</button>
+                        <a href="{{route('posts.show',[$post['id']])}}" class="btn btn-info">Show</a>
+
                         <button type="button" class="btn btn-primary">Edit</button>
                         <button type="button" class="btn btn-danger">Delete</button>
                     </td>
 
                 </tr>
-                
-                
+
+
                 @endforeach
-               
-             
+
+
 
             </tbody>
             </table>
         </div>
-   
+
         </section>
+
+        @endsection
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"

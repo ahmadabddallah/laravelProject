@@ -9,4 +9,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get ('/posts',[PostsController::class ,'index']);
+Route::get ('/posts',[PostsController::class ,'index'])->name('posts.index');
+// Route::get ('/posts/{posts}',function(){
+//     return $posts;
+// });
+
+
+Route::get ('/posts/create',[PostsController::class,'create'])->name('posts.create');
+
+Route::get('/posts/{post}',[PostsController::class,'show'])->name('posts.show');
+// Route::get ('/posts/{post}',[PostsController::class,'show']);
