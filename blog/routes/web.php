@@ -19,3 +19,4 @@ Route::get ('/posts/create',[PostsController::class,'create'])->name('posts.crea
 
 Route::get('/posts/{post}',[PostsController::class,'show'])->name('posts.show');
 // Route::get ('/posts/{post}',[PostsController::class,'show']);
+
